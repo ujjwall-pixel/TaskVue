@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="/taskdes.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+<div class="taskdespage">
+<div class="taskdetail">
+    <% if(locals.tasks && locals.tasks.length>0){ %>
+    <div class="heading">Task:</div>
+    <div id="tasktitle"><%= tasks[0].title %></div>
+    <div class="description" id="td"><%= tasks[0].description %></div>
+    <div class="priority"><strong>Priority </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="pt"><%= tasks[0].priority %></span></div>
+    <div class="due"><strong>Due Date</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="dd"><%= tasks[0].duedate %></span></div>
+    <div class="category"><strong>Category</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="cg"><%= tasks[0].category %></span></div>
+    <form action="/delete" method="POST">
+    <input type="hidden" id="hiddentitle" name="hiddentitle" value="<%= tasks[0].title %>">
+    <input type="submit" id="taskdone" value="Mark as done"></form>
+<% }%></div>
+<script src="/script.js" charset="utf-8"></script>

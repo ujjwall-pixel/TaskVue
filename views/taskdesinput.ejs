@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="/taskdesinput.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+<div class="taskdetail">
+    <div class="heading">Task:</div>
+    <div id="tasktitle"><%= tasks[tasks.length-1].title %></div>
+    <form action="/dash" method="post">
+    <div><textarea name = "description" placeholder="Description" class="description" cols="30" rows="10"></textarea></div>
+    <div  class="priority"><label for="priority">Priority&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <select name="priority" id="priority">
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+    </select></div>
+    <div class="due">
+    <label for="date">Due Date</label>
+    <input type="date" name="duedate" id="due"></div>
+    <div class="category">
+    <label for="category">Category&nbsp;</label>
+    <select name="category" id="category">
+        <option value="Personal">Personal</option>
+        <option value="Work">Work</option>
+        <option value="Health">Health</option>
+        <option value="Finance">Finance</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Events">Events</option>
+        <option value="Others">Others</option>
+    </select></div>
+    <input type="submit" id="savetask" value="Add Task">
+</form>
+</div>
+<script src="/script.js" charset="utf-8"></script>
+<script>
+    const dueDateInput = document.getElementById('due');
+    const today = new Date().toISOString().split('T')[0];
+    dueDateInput.setAttribute('min', today);
+    </script>

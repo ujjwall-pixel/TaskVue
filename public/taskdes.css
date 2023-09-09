@@ -1,0 +1,72 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.taskdetail{
+    display: flex;
+    /* border: 2px solid red;    */
+    /* border-left: 1px solid rgba(158, 158, 158, 0.692); */
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+    background-color: #EADBC8;
+}
+.done{
+    width: 100%;
+    height: 20%;
+    background-color: #EADBC8;
+}
+.heading{
+    width: 92%;
+    height: 8%;
+    /* border: 2px solid blueviolet; */
+    font-weight: bold;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.8em;
+    color: rgb(77, 75, 75);
+    margin-top: 5%;
+    margin-left: 4%;
+}
+#tasktitle{
+    margin-left: 7%;
+    font-family: 'Varela Round', sans-serif;
+    /* border: 2px solid red; */
+}
+.description{
+    font-family: 'Varela Round', sans-serif;
+    margin-top: 7%;
+    margin-left: 7%;
+    margin-bottom: 2%;
+    /* border: 2px solid red; */
+}
+.priority, .due, .category{
+    font-family: 'Varela Round', sans-serif;
+    margin-left: 7%;
+    margin-top: 6%;
+    font-size: 0.9em;
+    /* border: 2px solid red; */
+}
+.taskdespage{
+    height: 100%;
+    width: 100%;
+    background-color: #EADBC8;
+}
+#taskdone:hover{
+    opacity: 0.8;
+}
+#taskdone{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.2em;
+    color: white;
+    margin-left: 6%;
+    margin-top: 15%;
+    display: block;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(199, 45, 45);
+    cursor: pointer;
+}
+.hide{
+    display: none;
+}

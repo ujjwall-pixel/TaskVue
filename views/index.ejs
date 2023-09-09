@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+   <title>Todo List</title>
+</head>
+<body>
+    <div class="page">
+    <div class="menu">
+        <div id="name">
+            <span id="homeicon"><img src="/icons/list1.png" alt=""></span>
+            <a href="/dash" id="webname">Taskvue</a> 
+        </div>
+        <div id="functions">
+            <ul>
+                <li id="heading">TASKS</li>
+                <li><div id="allblock"><span  id="allicon" ><img src="/icons/density_small_black_24dp.svg" alt=""></span><span id="all"><a href="/dash">All</a></span></div></li>
+                <li><div id="pendingblock"><span id="pendingicon"><img src="/icons/pending_actions_FILL0_wght400_GRAD0_opsz48.svg" alt=""></span><span id="pending"><a href="/month">Month</a></span></div></li>
+                <li><div id="completedblock"><span id="completedicon"><img src="/icons/task_FILL0_wght400_GRAD0_opsz48.svg" alt=""></span><span id="completed"><a href="/week">Week</a></span></div></li>
+                <li><div id="todayblock"><span id="todayicon"><img src="/icons/today_FILL0_wght400_GRAD0_opsz48.svg" alt=""></span><span id="today"><a href="/today">Today</a></span></div></li>
+            </ul>
+            <ul>
+                <li id="heading">CATEGORY</li>
+                <li><div id="personalblock"><div id="personalcolor"></div><div id="personal"><a href="/personal">Personal</a></div></div></li>
+                <li><div id="workblock"><div id="workcolor"></div><div id="work"><a href="/work">Work</a></div></div></li>
+                <li><div id="cat1block"><div id="cat1color"></div><div id="cat1"><a href="/health">Health</a></div></div></li>
+                <li><div id="financeblock"><div id="financecolor"></div><div id="finance"><a href="/finance">Finance</a></div></div></li>
+                <li><div id="shoppingblock"><div id="shoppingcolor"></div><div id="shopping"><a href="/shopping">Shopping</a></div></div></li>
+                <li><div id="eventblock"><div id="eventcolor"></div><div id="event"><a href="/events">Events</a></div></div></li>
+                <li><div id="otherblock"><div id="othercolor"></div><div id="other"><a href="/others">Others</a></div></div></li>
+                <!-- <li><div id="addblock"><div id="addsymbol"><img src="/icons/add_FILL0_wght400_GRAD0_opsz48.svg" alt=""></div><div id="add"><a href="/add">Add New Category</a></div></div></li> -->
+            </ul>
+        </div>
+        <!-- <div id="settingblock">
+            <div id="settingicon"><img src="/icons/tune_FILL0_wght400_GRAD0_opsz48.svg" alt=""></div>
+            <div id="setting"><a href="/setting">Settings</a></div>
+        </div> -->
+        <div id="signblock">
+            <div id="signicon"><img src="/icons/logout_FILL0_wght400_GRAD0_opsz48.svg" alt=""></div>
+            <div id="sign"><a href="/signout">Sign out</a></div>
+        </div>
+    </div>
+    <div class="main">
+        <div id="date">
+            <%= day %></div>
+            <div id="number"><%= tasks.length %></div>
+        <div id="tasks">
+            <span><img src="/icons/add_FILL0_wght400_GRAD0_opsz48.svg" alt=""></span><form action="/filldetails" method="POST"><span id="addtask"><input type="text" name="title" placeholder="Add New Task"></span>
+            <input type="submit"></form>
+            <% for(let i=0;i<tasks.length;i++) {%>
+            <div id="task">
+                <div id="taskhead"><%= tasks[i].title %></div>
+                <span><img src="/icons/navigate_next_FILL0_wght400_GRAD0_opsz48.svg" alt=""></span></div><% } %>
+            </div>
+    </div>
+    <div class="taskdescription">
+        <% if(inp) {%>
+        <%- include("taskdescription.ejs") %> <% } else { %><%- include("taskdesinput.ejs") %><% } %>
+        <div id="myElement" data-custom-data="<%= JSON.stringify(tasks) %>"></div>
+<script src="/script.js" charset="utf-8"></script>
+</body>
+</html>

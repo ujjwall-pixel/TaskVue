@@ -1,0 +1,319 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.page{
+    display: grid;
+    grid-template-columns: 1.3fr 2.8fr 1.9fr;
+    height: 100vh;
+    width: 100vw;
+    /* border: 2px solid red; */
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid black; */
+    background-color: #F8F0E5;
+    margin-left: 2%;
+}
+.main{
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* border: 2px solid red; */
+    background-color: #EADBC8;
+    overflow: scroll;
+}
+::-webkit-scrollbar{
+    background-attachment:scroll;
+    background-color: transparent;
+    display: none;
+}
+#name{
+    height: 10%;
+    /* border: 2px solid orange; */
+    margin: 5px 4px;
+    display: flex;
+    background-color: #FAF1E4;
+}
+#functions{
+    height: 70%;
+    /* border: 2px solid orange; */
+    margin: 0px 4px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3%;
+    background-color: #CEDEBD;
+}
+#signblock{
+    height: 18%;
+    /* border: 2px solid orange; */
+    margin: 5px 4px;
+}
+/* #date{ */
+    /* height: 10%; */
+    /* border: 2px solid blueviolet; */
+    /* margin: 5px 4px; */
+/* } */
+#tasks{
+    height: 87%;
+    /* border: 2px solid blueviolet; */
+    margin: 0px 4px;
+    /* margin-bottom: 5px; */
+}
+#homeicon{
+    display: inline-block;
+    margin-top: 1.8%;
+    margin-left: 5%;
+    vertical-align: middle;
+}
+#homeicon:hover{
+    cursor: pointer;
+}
+#webname{
+    margin-top: 2%;
+    margin-left: 5%;
+    text-decoration: none;
+    font-size: 3.6em;
+    font-family: 'Marck Script', cursive;
+    color: rgb(20, 18, 18);
+    vertical-align: middle;
+    font-weight: bold;
+}
+li{
+    list-style: none;
+    font-family: 'Varela Round', sans-serif;
+}
+#heading{
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
+    color: rgb(58, 54, 54); 
+    font-size: 0.9em;
+    margin-top: 7%;
+    margin-left: 7%;
+    list-style-type: none;
+}
+#allicon{
+    display: inline-block;
+    margin-left: 10%;
+    margin-top: 2.466%;
+    vertical-align: middle;  
+    color: rgb(73, 67, 67);
+}
+#all{
+    display: inline-block;
+    margin-top: 1.7%;
+    margin-left: 3.5%;
+    vertical-align: middle;   
+}
+#allblock{
+    margin-top: 2.5%;
+}
+#pendingicon img{
+    width: 6%;
+    height: 6%;
+    margin-left: 10%;
+    vertical-align: middle;
+}
+#pending{
+    margin-left: 3.5%;
+    vertical-align: middle;
+}
+#pendingblock{
+    margin-top: 3%;
+}
+#completedicon img{
+    width: 6%;
+    height: 6%;
+    margin-left: 10%;
+    vertical-align: middle;
+}
+#completed{
+    margin-left: 3.5%;
+    vertical-align: middle;
+}
+#completedblock{
+    margin-top: 4.4%;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+#todayicon img{
+    width: 6%;
+    height: 6%;
+    margin-left: 10%;
+    vertical-align: middle;
+}
+#today{
+    margin-left: 3.5%;
+    vertical-align: middle;
+}
+#todayblock{
+    margin-top: 4.4%;
+    margin-bottom: 6%;
+}
+#personalcolor, #workcolor, #cat1color, #shoppingcolor, #financecolor, #eventcolor, #othercolor{
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border-radius: 4px;
+    background-color: #3498db;
+    margin-left: 10%;
+    margin-top: 5%;
+    vertical-align: middle;
+}
+#personal, #work, #cat1, #other, #event, #shopping, #finance{
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 5.2%;
+    margin-left: 3.5%;
+}
+#otherblock{
+    margin-bottom: 10%;
+}
+#personalblock{
+    margin-top: 1%;
+}
+#workcolor{
+    background-color:#000080;
+}
+#cat1color{
+    background-color: #FFA500;
+}
+#financecolor{
+    background-color: #008000;
+}
+#eventcolor{
+    background-color: #FF0000;
+}
+#othercolor{
+    background-color: #2ecc71;
+}
+#shoppingcolor{
+    background-color: #A52A2A;
+}
+#personalcolor{
+    background-color: #808080;
+}
+#addsymbol img{
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border: 1px solid black;
+    border-radius: 20px;
+    vertical-align: middle;
+}
+#addsymbol{
+    display: inline-block;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+#add{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 3.5%;
+}
+#settingicon img, #signicon img{
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+}
+#settingicon, #signicon{
+    display: inline-block;
+    margin-left: 10%;
+    margin-top: 5%;
+    vertical-align: middle;
+}
+#settingblock, #signblock{
+    margin-top: 5%;
+    display: inline-block;
+    vertical-align: middle;
+    font-family: 'Varela Round', sans-serif;
+    /* border: 2px solid red; */
+}
+#setting, #sign{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 3.5%;
+    margin-top: 4%;
+}
+#date{
+    display: inline-block;
+    margin-left: 6px;
+    /* border: 1px solid red; */
+    font-family: 'Poppins', sans-serif;
+    font-size: 3em;
+    color: rgb(49, 46, 46);
+}
+#number{
+    display: inline-block;
+    margin-left: 6%;
+    /* border: 1px solid red; */
+    font-size: 2.5em;
+    font-family: 'Varela Round', sans-serif;
+    color: rgb(49, 46, 46);
+}
+#tasks{
+    margin-top: 5%;
+    /* border: 2px solid black; */
+    overflow: scroll;
+}
+#tasks img{
+    height: 21px;
+    width: 21px;
+    /* margin-top: 4%; */
+    margin-left: 5.4%;
+    vertical-align: middle;
+}
+#addtask{
+    margin-left: 2%;
+    vertical-align: middle;
+    font-family: 'Varela Round', sans-serif;
+}
+input[type='submit']{
+    display: none;
+}
+form{
+    display: inline-block;
+    width: 85%;
+    margin-left: 2%;
+    /* border: 2px solid red; */
+}
+#addtask input[type='text']{
+    vertical-align: middle;
+    float: left;
+    font-family: 'Varela Round', sans-serif;
+    /* border: 2px solid black; */
+    width: 90%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1em;
+}
+#task{
+    font-family: 'Varela Round', sans-serif;
+    margin-left: 10.5%;
+    margin-top: 6%;
+    /* border: 2px solid red; */
+}
+#taskhead{
+    display: inline-block;
+    width: 80%;
+    /* border: 2px solid black; */
+    vertical-align: middle;
+}
+#task:hover{
+    cursor: pointer;
+}
+#task img{
+    float: right;
+    margin-right: 1%;
+    /* display: inline-block; */
+    /* border: 2px solid black; */
+    vertical-align: middle;
+}
+#myElement{
+    display: none;
+}

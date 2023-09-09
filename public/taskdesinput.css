@@ -1,0 +1,93 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.taskdetail{
+    display: flex;
+    /* border: 2px solid red;    */
+    /* border-left: 1px solid rgba(158, 158, 158, 0.692); */
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #EADBC8;
+}
+.heading{
+    width: 92%;
+    height: 8%;
+    /* border: 2px solid blueviolet; */
+    font-weight: bold;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.8em;
+    color: rgb(77, 75, 75);
+    margin-top: 5%;
+    margin-left: 4%;
+}
+#tasktitle{
+    margin-left: 7%;
+    font-family: 'Varela Round', sans-serif;
+    /* border: 2px solid red; */
+}
+.description{
+    font-family: 'Varela Round', sans-serif;
+    margin-top: 7%;
+    margin-left: 6.3%;
+    margin-bottom: 2%;
+    width: 100%;
+    height: 200px;
+    background-color: #EADBC8;
+    border-radius: 5px;
+    border-color:#ad7d7d;
+    position: relative;
+    resize: none;
+    /* border: 2px solid red; */
+}
+textarea {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.1em;
+}
+.description::placeholder{
+    top: 5px;
+    left: 3px;
+    position: absolute;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 0.9em;
+}
+.priority, .due, .category{
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
+    margin-left: 6.3%;
+    margin-top: 8%;
+    font-size: 1em;
+    /* border: 2px solid red; */
+}
+#priority{
+    margin-left: 10%;
+}
+#due{
+    margin-left: 10.3%;
+}
+#category{
+    margin-left: 9.2%;
+}
+select, input[type='date']{
+    height: 25px;
+    width: 30%;
+    border: 1px solid #ad7d7d;
+    border-radius: 5px;
+    background-color: transparent;
+}
+#savetask{
+    margin-top: 15%;
+    margin-left: 6.3%;
+    display: block;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(199, 45, 45);
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.2em;
+    color: white;
+}
+#savetask:hover{
+    cursor: pointer;
+}
