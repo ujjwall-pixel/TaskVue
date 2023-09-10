@@ -20,7 +20,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect('mongodb://127.0.0.1:27017/taskvueDB');
+mongoose.connect("mongodb+srv://admin-ujjwal:admin123@cluster0.qqjgs11.mongodb.net/taskvueDB?retryWrites=true&w=majority");
 
 const taskSchema = new mongoose.Schema({
   title: String,
@@ -205,8 +205,6 @@ app.get("/signup", (req, res)=>{
 app.post("/signup", async (req, res)=>{
   User.register({username:req.body.username}, req.body.password, function(err, user){
     if(err){
-      if(!User.find({username:req.body.username})){}
-      else{console.log("Username already exists")}
       console.log(err);
       res.redirect("/signup");
     }
