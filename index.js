@@ -1,8 +1,11 @@
+import 'dotenv/config';
 import express from "express";
 import mongoose from "mongoose";
 import session from "express-session";
 import passport from "passport";
 import passportlocalMOngoose from "passport-local-mongoose";
+import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
+import findOrCreate from 'mongoose-findorcreate'
 const app = express();
 const port = 80;
 const hostname = "127.0.0.1";
@@ -10,7 +13,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded());
 
 app.use(session({
-  secret:"Secret",
+  secret:process.env.SECRET,
   resave:false,
   saveUninitialized:false
 }));
@@ -29,15 +32,46 @@ const taskSchema = new mongoose.Schema({
 const userSchema = new mongoose.Schema({
   username: String,
   password: String,
+  googleId:String,
   tasks: [taskSchema]
 });
 userSchema.plugin(passportlocalMOngoose);
+userSchema.plugin(findOrCreate);
 
 const User = mongoose.model("User", userSchema);
 
 passport.use(User.createStrategy());
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+passport.serializeUser(function(user, cb) {
+  process.nextTick(function() {
+    cb(null, { id: user.id, username: user.username });
+  });
+});
+passport.deserializeUser(function(user, cb) {
+  process.nextTick(async function() {
+    try {
+      // Fetch the complete user object from the database
+      const completeUser = await User.findById(user.id);
+      if (!completeUser) {
+        return cb(new Error('User not found'));
+      }
+      cb(null, completeUser);
+    } catch (err) {
+      cb(err);
+    }
+  });
+});
+passport.use(new GoogleStrategy({
+  clientID: process.env.CLIENT_ID,
+  clientSecret: process.env.CLIENT_SECRET,
+  callbackURL: "http://localhost/auth/google/taskvue",
+  userProfileURL:"https://www.googleapis.com/oauth2/v3/userinfo"
+},
+function(accessToken, refreshToken, profile, cb) {
+  User.findOrCreate({ googleId: profile.id }, function (err, user) {
+    return cb(err, user);
+  });
+}
+));
 
 // const user2 = new User({
 //   username:"ujjwal",
@@ -84,6 +118,15 @@ passport.deserializeUser(User.deserializeUser());
 app.get("/", (req, res) => {
   res.redirect("/login");
 });
+app.get('/auth/google',
+  passport.authenticate('google', { scope: ['profile'] }));
+
+app.get('/auth/google/taskvue', 
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/dash');
+  });
 
 app.get("/login", (req, res)=>{
   res.render("sign.ejs");
@@ -119,6 +162,7 @@ app.get("/dash", async (req, res)=>{
 app.post("/filldetails", async (req, res) => {
   if(req.isAuthenticated()){
     const userdata = req.user;
+    console.log(userdata);
     userdata.tasks.push({title:req.body.title});
     inp = 0;
     await userdata.save();

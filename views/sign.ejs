@@ -17,7 +17,6 @@
     <title>Login Page</title>
 </head>
 <body>
-    <div class="page">
     <div class="container">
         <div class="left-container">
             <!-- <img src="/icons/list1.png" alt="" class="logo"> -->
@@ -26,20 +25,17 @@
             </div> -->
         </div>
         <div class="right-container">
-            <div id="loginblock">
             <h1>Taskvue</h1>
             <h4>Organize &nbsp;Prioritize&nbsp; Conquer</h4><br><br><br>
             <form action="/login" method="POST">
-                <div><input type="text" name="username" id="username" placeholder="Username"></div>
-                <div><input type="password" name="password" id="password" placeholder="Password"></div>
-                <div><input type="submit" name="login" id="login" value="Log In"></div> 
+                <input type="text" name="username" id="username" placeholder="Username">
+                <input type="password" name="password" id="password" placeholder="Password">
+                <input type="submit" name="login" id="login" value="Log In">
             </form>
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="or">or</span><br><br>
-            <div class="google"><span><img id="googleicon" src="/icons/google.png" alt=""></span><span id="googletext"><a href="">Sign in with Google</a></span></div>
+            <br><span id="or">or</span><br>
+            <div class="google"><span><img id="googleicon" src="/icons/google.png" alt=""></span><span id="googletext"><a href="/auth/google">Sign in with Google</a></span></div>
             <div class="createaccount">New User?<a href="/signup" id="createaccount">Create Account</a></div>
         </div>
-    </div>
-    </div>
 </div>
 </body>
 </html>
