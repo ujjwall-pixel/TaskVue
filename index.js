@@ -289,7 +289,7 @@ app.get("/finance", async(req, res)=>{
   const userdata = req.user.tasks;
   var financedata = [];
   userdata.forEach(element=>{
-    if(element.category == "finance"){
+    if(element.category == "Finance"){
       financedata.push(element);
     }
   });
@@ -300,7 +300,7 @@ app.get("/events", async(req, res)=>{
   const userdata = req.user.tasks;
   var eventsdata = [];
   userdata.forEach(element=>{
-    if(element.category == "events"){
+    if(element.category == "Events"){
       eventsdata.push(element);
     }
   });
@@ -311,7 +311,7 @@ app.get("/health", async(req, res)=>{
   const userdata = req.user.tasks;
   var healthdata = [];
   userdata.forEach(element=>{
-    if(element.category == "health"){
+    if(element.category == "Health"){
       healthdata.push(element);
     }
   });
