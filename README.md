@@ -24,4 +24,4 @@ To access Taskvue, simply visit [taskvue.onrender.com](https://taskvue.onrender.
 
 ---
 
-Thank you for using Taskvue! We hope it helps you stay organized and productive.
+Thank you for using Taskvue! Hope it helps you stay organized and productive.
