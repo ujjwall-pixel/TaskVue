@@ -279,7 +279,7 @@ app.get("/shopping", async(req, res)=>{
   var shoppingdata = [];
   userdata.forEach(element=>{
     if(element.category == "Shopping"){
-      othersdata.push(element);
+      shoppingdata.push(element);
     }
   });
   res.render("index.ejs", {tasks:shoppingdata, inp:inp, day:"Shopping"});}
