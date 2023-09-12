@@ -314,6 +314,68 @@ form{
     /* border: 2px solid black; */
     vertical-align: middle;
 }
-#myElement{
+#togglemenu, #cross, #crosstitle, #myElement{
     display: none;
+}
+@media screen and (max-width: 768px) {
+    .menu{
+        display: none;
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+    }
+    #name{
+        display: none;
+    }
+    .taskdescription{
+        display: none;
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+    }
+    .main{
+        display: block;
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+    }
+    #togglemenu{
+        display: inline-block;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    #crosstitle{
+        display: inline-block;
+        font-family: 'Poppins', sans-serif;
+        font-size: 2em;
+        color: rgb(49, 46, 46);
+        margin-left: 2%;
+        margin-top: 2%;
+    }
+    #cross{
+        display: inline-block;
+        margin-top: 5%;
+        margin-right: 2%;
+        float: right;
+    }
+    #functions{
+        height: fit-content;
+    }
+    #signblock{
+        width: 90%;
+        margin-top: 1%;
+        height: 5%;
+    }
+    #heading{
+        margin-top: 6%;
+    }
+    #signicon, #sign{
+        display: inline-block;
+    }
+    #otherblock{
+        margin-bottom: 15%;
+    }
+    .heading{
+        vertical-align: middle;
+    }
 }

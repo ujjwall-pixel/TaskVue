@@ -5,7 +5,7 @@
 <div class="taskdespage">
 <div class="taskdetail">
     <% if(locals.tasks && locals.tasks.length>0){ %>
-    <div class="heading">Task:</div>
+    <div class="heading">Task: <span id="crosst"><img src="/icons/close_FILL0_wght400_GRAD0_opsz24.svg" alt=""></span></div>
     <div id="tasktitle"><%= tasks[0].title %></div>
     <div class="description" id="td"><%= tasks[0].description %></div>
     <div class="priority"><strong>Priority </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="pt"><%= tasks[0].priority %></span></div>

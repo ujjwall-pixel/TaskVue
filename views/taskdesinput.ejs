@@ -4,22 +4,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 
 <div class="taskdetail">
-    <div class="heading">Task:</div>
+    <div class="heading">Task: <span id="crosst"><img src="/icons/close_FILL0_wght400_GRAD0_opsz24.svg" alt=""></span></div>
     <div id="tasktitle"><%= tasks[tasks.length-1].title %></div>
     <form action="/dash" method="post">
-    <div><textarea name = "description" placeholder="Description" class="description" cols="30" rows="10"></textarea></div>
+    <div><textarea name = "description" placeholder="Description" class="description" cols="30" rows="10" required></textarea></div>
     <div  class="priority"><label for="priority">Priority&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    <select name="priority" id="priority">
+    <select name="priority" id="priority" required>
         <option value="Low">Low</option>
         <option value="Medium">Medium</option>
         <option value="High">High</option>
     </select></div>
     <div class="due">
     <label for="date">Due Date</label>
-    <input type="date" name="duedate" id="due"></div>
+    <input type="date" name="duedate" id="due" required></div>
     <div class="category">
     <label for="category">Category&nbsp;</label>
-    <select name="category" id="category">
+    <select name="category" id="category" required>
         <option value="Personal">Personal</option>
         <option value="Work">Work</option>
         <option value="Health">Health</option>

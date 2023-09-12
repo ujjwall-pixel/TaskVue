@@ -91,3 +91,14 @@ select, input[type='date']{
 #savetask:hover{
     cursor: pointer;
 }
+#crosst{
+    display: none;
+}
+@media screen and (max-width: 768px) {
+    #crosst{
+        display: inline-block;
+        margin-top: 5%;
+        margin-right: 2%;
+        float: right;
+    }
+}

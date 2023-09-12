@@ -105,3 +105,17 @@ a{
     font-family: 'Varela Round', sans-serif;
     color: grey;
 }
+@media screen and (max-width: 768px) {
+    .left-container {
+        display: none;
+    }
+    .container{
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+    }
+    .right-container{
+        width: 100vw;
+        height: 100vh;
+    }
+}
