@@ -13,7 +13,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded());
 
 app.use(session({
-  secret:process.env.SECRET,
+  secret:"RockMan",
   resave:false,
   saveUninitialized:false
 }));
@@ -61,8 +61,8 @@ passport.deserializeUser(function(user, cb) {
   });
 });
 passport.use(new GoogleStrategy({
-  clientID: process.env.CLIENT_ID,
-  clientSecret: process.env.CLIENT_SECRET,
+  clientID: "386913345682-1h3d4l2land7mud1dugs4fc4um55sl37.apps.googleusercontent.com",
+  clientSecret: "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",
   callbackURL: "https://taskvue.onrender.com/auth/google/taskvue",
   userProfileURL:"https://www.googleapis.com/oauth2/v3/userinfo"
 },
